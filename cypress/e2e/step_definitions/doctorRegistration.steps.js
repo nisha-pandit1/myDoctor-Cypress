@@ -12,28 +12,28 @@ Given("user navigates to the {string} page", function (url) {
   cy.visit(Urls[url]);
 });
 
-Then("user enters value email in the {string} input field", function (webElem) {
-  var email = generic.generateEmailAddresss();
-  cy.wrap(email).as("emailId");
-  webTextBoxs.typeText(locators[webElem], email);
+Then("user enter value in the {string} input field", function (elementIdentifier) {
+  if (elementIdentifier=="Email"){
+    var email = generic.generateEmailAddresss();
+    cy.wrap(email).as("emailId");
+    webTextBoxs.typeText(locators[elementIdentifier], email);
+  }
+  else{
+    var mobileNo = generic.generateMobileNumber();
+      cy.wrap(mobileNo).as("mobileNumber");
+      webTextBoxs.typeText(locators[elementIdentifier], mobileNo);
+  }
+  
 });
-
-Then("user enters value Mobile Number in the {string} input field", function (webElem) {
-  var mobileNo = generic.generateMobileNumber();
-  cy.wrap(mobileNo).as("mobileNumber");
-  webTextBoxs.typeText(locators[webElem], mobileNo);
-});
-
-Then("user enter mobile Number in the {string} input field", function (webElem) {
-  cy.get('@mobileNumber').then((mobileNumber) => {
-  webTextBoxs.typeText(locators[webElem], mobileNumber);
-});
-});
-
-Then("user enter value email in the {string} input field", function (webElem) {
-  cy.get('@emailId').then((emailId) => {
-  webTextBoxs.typeText(locators[webElem], emailId);
-});
+Then("user enters value in the {string} input field", function (elementIdentifier) {
+  if (elementIdentifier=="Email"){
+      cy.get('@mobileNumber').then((mobileNumber) => {
+  webTextBoxs.typeText(locators[elementIdentifier], mobileNumber);});
+      }
+      else{
+        cy.get('@emailId').then((emailId) => {
+            webTextBoxs.typeText(locators[elementIdentifier], emailId);});
+        }
 });
 
 Then("user selects checkbox with value {string}", function (gender) {

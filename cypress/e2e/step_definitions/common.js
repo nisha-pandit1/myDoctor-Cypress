@@ -14,13 +14,13 @@ Given('user is on the homepage', function () {
     generic.visit();
 });
 
-When("user enters value {string} in the {string} input field", function (userData, webElem) {
+When("user enters value {string} in the {string} input field", function (userData, elementIdentifier) {
     cy.wrap(userData).as("Specialities");
-    webTextBoxs.typeText(locators[webElem], userData);
+    webTextBoxs.typeText(locators[elementIdentifier], userData);
 });
 
-When("user clicks on the {string}", (webElem) => {
-    webButtons.click(locators[webElem]);
+When("user clicks on the {string}", (elementIdentifier) => {
+    webButtons.click(locators[elementIdentifier]);
 });
 
 Then("user can view message {string}", function (message) {
