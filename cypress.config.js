@@ -20,7 +20,7 @@ module.exports = defineConfig({
       return config;
     },
     specPattern: "cypress/e2e/features/*.feature",
-    baseUrl: "http://192.168.29.2:3002/",
+    baseUrl: "http://my-doctors.net/",
     chromeWebSecurity: false,
     chromeWebSecurity: false,
     viewportHeight: 900,

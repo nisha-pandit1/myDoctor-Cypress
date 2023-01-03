@@ -9,7 +9,7 @@
     "email": "#emailOrMobile",
     "Submit button": ".MuiButtonBase-root .MuiButton-label:last()",
     "register button": "form [type='submit']:last()",
-    "search icon": "div .makeStyles-searchBar-12 .MuiPaper-root .MuiButtonBase-root:first",
+    "search icon": ".MuiPaper-root .MuiButtonBase-root:first()",
     "doctor carts": "div.MuiCardContent-root p",
     "specialities field": ".MuiInputBase-input:first",
     "no results message":"div p.MuiTypography-root",
