@@ -11,15 +11,15 @@ Then(
     let doctorName = [];
       doctorName = doctorNames.split(',');
    for (let count=0;count<doctorName.length;count++){
-    webText.verifyPartialText(locators[webElem], doctorName[count]);
+    webText.verifyPartialText(webElem, doctorName[count]);
 };
 });
 
 Then("user enters {string} in the {string} field", function (specialities,webElem) {
   cy.wrap(specialities).as("specialities");
- webTextBoxs.typeText(locators[webElem], specialities);
- webTextBoxs.typeText(locators[webElem], "{downArrow}");
- webTextBoxs.typeText(locators[webElem], "{enter}");
+ webTextBoxs.typeText(webElem, specialities);
+ webTextBoxs.typeText(webElem, "{downArrow}");
+ webTextBoxs.typeText(webElem, "{enter}");
 });
 
 

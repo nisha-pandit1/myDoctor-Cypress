@@ -1,26 +1,25 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import locators from "../../pages/MydoctorLocators.json";
-import WebButton from "../../helpers/webButton";
-import WebElement from "../../helpers/webElement";
-import WebTextBox from "../../helpers/webTextBox";
+import WebButton from "../../ui/webButton";
+import WebTextBox from "../../ui/webTextBox";
 import GenericActions from "../../utilities/genericActions";
-import WebXpath from "../../helpers/webXpath";
+import WebXpath from "../../ui/webXpath";
 const generic = new GenericActions();
 const webTextBoxs = new WebTextBox();
 const webButtons = new WebButton();
-const webElements = new WebElement();
 const webXpath = new WebXpath();
+
 Given('user is on the homepage', function () {
     generic.visit();
 });
 
-When("user enters value {string} in the {string} input field", function (userData, elementIdentifier) {
+When("user enters value {string} in the {string} input field", function (userData, webElem) {
     cy.wrap(userData).as("Specialities");
-    webTextBoxs.typeText(locators[elementIdentifier], userData);
+    webTextBoxs.typeText(webElem, userData);
 });
 
-When("user clicks on the {string}", (elementIdentifier) => {
-    webButtons.click(locators[elementIdentifier]);
+When("user clicks on the {string}", (webElem) => {
+    webButtons.click(webElem);
 });
 
 Then("user can view message {string}", function (message) {
@@ -31,6 +30,8 @@ Then("user can view message {string}", function (message) {
         webXpath.shouldContainTextByXpath("visibleText", messageText[count]);
     };
 });
+
+
 
 
 

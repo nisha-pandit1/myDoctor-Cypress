@@ -1,11 +1,8 @@
 {
-    "login":{
-
-    
-    "email": "#emailOrMobile",
-    "Password": "input#password",
-    "Submit button": ".MuiButtonBase-root .MuiButton-label:last()",
-    "login button": ".MuiTypography-root .MuiButtonBase-root .MuiButton-label"
-
+    "login": {
+        "email": "#emailOrMobile",
+        "Password": "input#password",
+        "Submit button": ".MuiButtonBase-root .MuiButton-label:last()",
+        "login button": ".MuiTypography-root .MuiButtonBase-root .MuiButton-label"
     }
 }

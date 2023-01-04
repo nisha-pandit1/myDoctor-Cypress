@@ -16,12 +16,12 @@ Then("user enters value in the {string} input field", function (webElem) {
 if(webElem=='Email'){
   var email = generic.generateEmailAddresss();
   cy.wrap(email).as("emailId");
-  webTextBoxs.typeText(locators[webElem], email);
+  webTextBoxs.typeText(webElem, email);
 }
 else{
   var mobileNo = generic.generateMobileNumber();
   cy.wrap(mobileNo).as("mobileNumber");
-  webTextBoxs.typeText(locators[webElem], mobileNo);
+  webTextBoxs.typeText(webElem, mobileNo);
 }
 });
 
@@ -29,12 +29,12 @@ else{
 Then("user enter users data in the {string} input field", function (webElem) {
   if(webElem=='Email')
   cy.get('@emailId').then((emailId) => {
-    webTextBoxs.typeText(locators[webElem], emailId);
+    webTextBoxs.typeText(webElem, emailId);
  
 });
 else{
   cy.get('@mobileNumber').then((mobileNumber) => {
-    webTextBoxs.typeText(locators[webElem], mobileNumber);
+    webTextBoxs.typeText(webElem, mobileNumber);
   });
 }
 });

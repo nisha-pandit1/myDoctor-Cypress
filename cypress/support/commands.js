@@ -23,3 +23,17 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+// import locators from "../myDoctorLocators";
+// import { readFile } from 'fs';
+
+// readFile('/etc/passwd', (err, data) => {
+//   if (err) throw err;
+//   console.log(data);
+// });
+// Cypress.Commands.add('loadJson',(token,filename)=>{
+//     cy.readFile('../myDoctorLocators'+filename).its(token).then(val) => 
+//     ({
+//       cy.fetchElement(token,JSON.stringify(val));
+//     })
+// })
