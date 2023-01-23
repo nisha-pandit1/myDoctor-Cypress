@@ -106,7 +106,7 @@ class GenericActions {
     generateMobileNumber(){
         var num = "0123456789";
         var mobileNumber = 9;
-        for (var i= 0;i <= 8;i++){
+        for (var i= 0;i <= 9;i++){
             mobileNumber += num.charAt(Math.floor(Math.random() * num.length))
         }
         localStorage.setItem("Phone Number",mobileNumber)

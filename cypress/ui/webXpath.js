@@ -1,14 +1,14 @@
+
 class WebXpath {
- 
-    setXpathValue(type,word){
+ setXpathValue(type,word){
         
         let xpathString = '';
 
-        if(type === 'name' || type === 'id' || type === 'class'){
-            xpathString = `//*[contains(@${type},'${word}')]`
-        }
-        else if(type === 'visibleText'){
+        if(type === 'visibleText'){
             xpathString = `//*[contains(text(),'${word}')]`
+        }
+        else{
+            xpathString = `//*[contains(@${type},'${word}')]`
         }
 
         return xpathString;

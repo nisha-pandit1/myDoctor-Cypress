@@ -1,26 +1,25 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
-import locators from "../../pages/MydoctorLocators.json";
-import WebButton from "../../helpers/webButton";
-import WebElement from "../../helpers/webElement";
-import WebTextBox from "../../helpers/webTextBox";
+import WebButton from "../../ui/webButton";
 import GenericActions from "../../utilities/genericActions";
-import WebXpath from "../../helpers/webXpath";
+import WebTextBox from "../../ui/webTextBox";
+import WebXpath from "../../ui/webXpath";
 const generic = new GenericActions();
 const webTextBoxs = new WebTextBox();
 const webButtons = new WebButton();
-const webElements = new WebElement();
 const webXpath = new WebXpath();
+
 Given('user is on the homepage', function () {
     generic.visit();
 });
 
 When("user enters value {string} in the {string} input field", function (userData, elementIdentifier) {
     cy.wrap(userData).as("Specialities");
-    webTextBoxs.typeText(locators[elementIdentifier], userData);
+
+    webTextBoxs.typeText(elementIdentifier, userData);
 });
 
 When("user clicks on the {string}", (elementIdentifier) => {
-    webButtons.click(locators[elementIdentifier]);
+    webButtons.click(elementIdentifier);
 });
 
 Then("user can view message {string}", function (message) {

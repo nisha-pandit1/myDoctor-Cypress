@@ -56,7 +56,7 @@ Feature: Doctor Registration
       | Test User | Male       | !@#$%^         | !@#$%^         | Must contain lowercase letter.Must contain uppercase letter.Must contain at least one number.                          | Doctor Registration |
       | Test User | Male       | Alpha@12       | Alpha@1233     | Passwords must match.                                                                                                  | Doctor Registration |
 
-  # # # # # # @DORE004 @DoctorRegistration @Regression @NotAutomated @Doctor
+  # # # # # # # @DORE004 @DoctorRegistration @Regression @NotAutomated @Doctor
   Scenario Outline:User is not able to register with existing mobile number & email
     Given user navigates to the "<Page Type>" page
     When user enters value "<Name>" in the "fullname" input field
