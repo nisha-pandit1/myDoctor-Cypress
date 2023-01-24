@@ -2,7 +2,7 @@ import Loctors from "../myDoctorLocators/mergingLocators";
 const locators = new Loctors();
 class GenericHelpers  {
   
-    elementCount(element) {
+    elementCount(webElem) {
 
         try {
             return cy.get(locators.getLoctors(element)).its('length').then(function (size) {
@@ -26,7 +26,7 @@ class GenericHelpers  {
     }
        
     
-    elementIsNotPresent(element) {
+    elementIsNotPresent(webElem) {
         try {
             if (element.should('not.exist')) {
                 cy.log("The Element: " + element + " is Not Present in the webpage.");
@@ -57,7 +57,7 @@ class GenericHelpers  {
          }
     }
 
-    elementIsEnabled(element) {
+    elementIsEnabled(webElem) {
 
         try {
             if (element.should("not.be.disabled")) {
@@ -83,7 +83,7 @@ class GenericHelpers  {
     
 
     
-    shouldHaveCSS(element, cssname, value) {
+    shouldHaveCSS(webElem, cssname, value) {
         element.should('have.css', cssname, value).then(function (text) {
             cy.log("The element have css value: " + value);
 
@@ -92,7 +92,7 @@ class GenericHelpers  {
         });
     }
 
-    getAttribute(element, attribute) {
+    getAttribute(webElem, attribute) {
         element.invoke('attr', attribute).then(function (text) {
             cy.log("The attribute of element is captured which is: " + text);
             return text;

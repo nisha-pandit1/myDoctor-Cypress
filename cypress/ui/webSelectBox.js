@@ -3,7 +3,7 @@ const locators = new Loctors();
 
 class WebSelectBox {
 
-    selectDropDownUsingText(element, text) {
+    selectDropDownUsingText(webElem, text) {
 
         cy.get(locators.getLoctors(element)).select(text).then(function () {
             cy.log("--->Success: The " + text + " in dropdown got clicked.");

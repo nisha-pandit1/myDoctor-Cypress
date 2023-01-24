@@ -1,4 +1,3 @@
-
 class WebXpath {
  setXpathValue(type,word){
         
@@ -14,8 +13,8 @@ class WebXpath {
         return xpathString;
     }
 
-    clickByXpath(type,element){
-        let getXpathValue = this.setXpathValue(type,element);
+    clickByXpath(type,webElem){
+        let getXpathValue = this.setXpathValue(type,webElem);
         cy.xpath(getXpathValue).click().then(function () {
             cy.log("The element got clicked.");
         }, function (err) {
@@ -34,8 +33,8 @@ class WebXpath {
 
     shouldContainTextByXpath(type,text) {
         let getXpathValue = this.setXpathValue(type,text);
-        cy.xpath(getXpathValue).should('contain', text).then(function (text) {
-            cy.log("The element is present");
+        cy.xpath(getXpathValue).should('be.visible').then(function (text) {
+            cy.log("The element is have: " + text);
 
         }, function (err) {
             cy.log("--->Error: The element dosn't have text due to: " + err);

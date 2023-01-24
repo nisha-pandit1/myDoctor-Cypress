@@ -12,7 +12,7 @@ Given('user is on the homepage', function () {
     generic.visit();
 });
 
-When("user enters value {string} in the {string} input field", function (userData, elementIdentifier) {
+When("user enters value {string} in the {string} input field", function (userData, webElem) {
     cy.wrap(userData).as("Specialities");
 
     webTextBoxs.typeText(elementIdentifier, userData);
@@ -30,6 +30,8 @@ Then("user can view message {string}", function (message) {
         webXpath.shouldContainTextByXpath("visibleText", messageText[count]);
     };
 });
+
+
 
 
 
