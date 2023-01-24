@@ -1,4 +1,4 @@
-import locators from "../pages/MydoctorLocators.json";
+
 class WebXpath {
  setXpathValue(type,word){
         
