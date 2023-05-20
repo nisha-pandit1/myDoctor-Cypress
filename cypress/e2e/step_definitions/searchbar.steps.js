@@ -8,12 +8,12 @@ const webText= new WebText();
 Then(
   "corresponding page appears with the expected {string}: {string}",
   function (elementIdentifier,doctorNames) {
-  //   cy.log(doctorNames);
-  //   let doctorName = [];
-  //     doctorName = doctorNames.split(',');
-  //  for (let count=0;count<doctorName.length;count++){
-  //   webText.verifyPartialText(elementIdentifier, doctorName[count]);
-// };
+    cy.log(doctorNames);
+    let doctorName = [];
+      doctorName = doctorNames.split(',');
+   for (let count=0;count<doctorName.length;count++){
+    webText.verifyPartialText(elementIdentifier, doctorName[count]);
+};
 });
 
 Then("user enters {string} in the {string} field", function (specialities,elementIdentifier) {

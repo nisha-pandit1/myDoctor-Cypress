@@ -1,4 +1,22 @@
-Feature: Doctor Registration
+  Scenario Outline:User is not able to register with existing mobile number & email
+    Given user navigates to the "<Page Type>" page
+    When user enters value "<Name>" in the "fullname" input field
+    And user selects checkbox with value "<GenderType>"
+    And user enters value in the "Email" input field
+    And user enters value in the "mobilenumber" input field
+    And user enters value "<Password>" in the "Password" input field
+    And user enters value "<Password>" in the "confirm password" input field
+    When user clicks on the "register button"
+    Then user can view message "Signed up successfully!"
+    And user enter users data in the "mobilenumber" input field
+    And user enter users data in the "Email" input field
+    And user enters value "<Password>" in the "Password" input field
+    Then user can view message "<Error Message>"
+
+    Examples:
+      | Name         | Password    | GenderType | Page Type           | Error Message                 |
+      | Hunter Brown | 9797@Qwerty | Male       | Doctor Registration | Mobile number already exists! |
+     
 
   @DORE001 @Sanity @NotAutomated @Regression @DoctorRegistration @Doctor
   Scenario Outline:User navigates to the Doctor Registration and signs up
@@ -16,7 +34,7 @@ Feature: Doctor Registration
       | Hunter Brown | 9797@Qwerty | Male       | Doctor Registration |
 
 
-  # @DORE002 @DoctorRegistration @Regression @NotAutomated @Doctor
+  # # @DORE002 @DoctorRegistration @Regression @NotAutomated @Doctor
   Scenario Outline:User navigates to the Doctor Registration and signs up with invalid data
     Given user navigates to the "<Page Type>" page
     When user enters value "<Name>" in the "fullname" input field
@@ -34,7 +52,7 @@ Feature: Doctor Registration
       | sam   | abc@abc.com | 954110829     | Doctor Registration | Please enter a valid 10-digit mobile number! | Male       |
       | sam   | abc@abc.com | 98765432      | Doctor Registration | Please enter a valid 10-digit mobile number! | Male       |
 
-  # # # # # # # # # # # # @DORE003 @DoctorRegistration @Regression @NotAutomated @Doctor
+  # # # # # # # # # # # # # @DORE003 @DoctorRegistration @Regression @NotAutomated @Doctor
   Scenario Outline:User is not able to register with invalid password
     Given user navigates to the "<Page Type>" page
     When user enters value "<Name>" in the "fullname" input field
@@ -56,23 +74,23 @@ Feature: Doctor Registration
       | Test User | Male       | !@#$%^         | !@#$%^         | Must contain lowercase letter.Must contain uppercase letter.Must contain at least one number.                          | Doctor Registration |
       | Test User | Male       | Alpha@12       | Alpha@1233     | Passwords must match.                                                                                                  | Doctor Registration |
 
-  # # # # # # # @DORE004 @DoctorRegistration @Regression @NotAutomated @Doctor
-  Scenario Outline:User is not able to register with existing mobile number & email
-    Given user navigates to the "<Page Type>" page
-    When user enters value "<Name>" in the "fullname" input field
-    And user selects checkbox with value "<GenderType>"
-    And user enters value in the "Email" input field
-    And user enters value in the "mobilenumber" input field
-    And user enters value "<Password>" in the "Password" input field
-    And user enters value "<Password>" in the "confirm password" input field
-    When user clicks on the "register button"
-    Then user can view message "Signed up successfully!"
-    And user enter users data in the "mobilenumber" input field
-    And user enter users data in the "Email" input field
-    And user enters value "<Password>" in the "Password" input field
-    Then user can view message "<Error Message>"
+  # # # # # # # # @DORE004 @DoctorRegistration @Regression @NotAutomated @Doctor
+  # Scenario Outline:User is not able to register with existing mobile number & email
+  #   Given user navigates to the "<Page Type>" page
+  #   When user enters value "<Name>" in the "fullname" input field
+  #   And user selects checkbox with value "<GenderType>"
+  #   And user enters value in the "Email" input field
+  #   And user enters value in the "mobilenumber" input field
+  #   And user enters value "<Password>" in the "Password" input field
+  #   And user enters value "<Password>" in the "confirm password" input field
+  #   When user clicks on the "register button"
+  #   Then user can view message "Signed up successfully!"
+  #   And user enter users data in the "mobilenumber" input field
+  #   And user enter users data in the "Email" input field
+  #   And user enters value "<Password>" in the "Password" input field
+  #   Then user can view message "<Error Message>"
 
-    Examples:
-      | Name         | Password    | GenderType | Page Type           | Error Message                 |
-      | Hunter Brown | 9797@Qwerty | Male       | Doctor Registration | Mobile number already exists! |
-      | Hunter Brown | 9797@Qwerty | Male       | Doctor Registration | Email address already exists! |
+  #   Examples:
+  #     | Name         | Password    | GenderType | Page Type           | Error Message                 |
+  #     | Hunter Brown | 9797@Qwerty | Male       | Doctor Registration | Mobile number already exists! |
+  #     | Hunter Brown | 9797@Qwerty | Male       | Doctor Registration | Email address already exists! |

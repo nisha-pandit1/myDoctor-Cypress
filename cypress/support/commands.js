@@ -37,3 +37,10 @@
 //       cy.fetchElement(token,JSON.stringify(val));
 //     })
 // })
+Cypress.Commands.add('Login', (email, password) => {
+    cy.visit("/");
+    cy.get(".MuiButton-label").click();
+    cy.get("#emailOrMobile").type("aka@gmail.com");
+    cy.get("#password").type("MYdoctors@149");
+    cy.get(".MuiButton-label:last()").click();
+});

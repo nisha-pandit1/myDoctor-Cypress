@@ -9,6 +9,13 @@ class WebButton {
             cy.log("--->Error: The element couldn't get clicked due to: " + err);
         });
     }
+    clicks(element) {
+        cy.get(element).click().then(function () {
+            cy.log("The element got clicked.");
+        }, function (err) {
+            cy.log("--->Error: The element couldn't get clicked due to: " + err);
+        });
+    }
 
     multipleClick(element) {
         cy.get(locators.getLoctors(element)).click({ multiple: true }).then(function () {

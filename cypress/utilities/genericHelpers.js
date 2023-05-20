@@ -1,20 +1,11 @@
-<<<<<<< HEAD
 import Loctors from "../myDoctorLocators/mergingLocators";
 const locators = new Loctors();
-=======
-import locators from "../pages/MydoctorLocators.json";
-
->>>>>>> 3a1f0936280e82e795ee1d200fb79090acd40ca8
 class GenericHelpers  {
   
-    elementCount(webElem) {
+    elementCount(element) {
 
         try {
-<<<<<<< HEAD
             return cy.get(locators.getLoctors(element)).its('length').then(function (size) {
-=======
-            return cy.get(locators[webElem]).its('length').then(function (size) {
->>>>>>> 3a1f0936280e82e795ee1d200fb79090acd40ca8
                 return new Promise(function (resolve, reject) {
                     resolve(size);
                 })
@@ -25,13 +16,8 @@ class GenericHelpers  {
         }
     }
 
-<<<<<<< HEAD
     elementIsPresent(element) {
         cy.get(locators.getLoctors(element)).should('exist').then(function() {
-=======
-    elementIsPresent(webElem) {
-        cy.get(locators[webElem]).should('exist').then(function() {
->>>>>>> 3a1f0936280e82e795ee1d200fb79090acd40ca8
             cy.log("The Element: " + element + " is Present in the webpage.");
         }), function (err){
             cy.log("The Element: " + element + " is not Present in the webpage.");
@@ -54,13 +40,8 @@ class GenericHelpers  {
         }
     }
 
-<<<<<<< HEAD
     elementIsDisplayed(element) {
         cy.get(locators.getLoctors(element)).should('be.visible').then(function() {
-=======
-    elementIsDisplayed(webElem) {
-        cy.get(locators[webElem]).should('be.visible').then(function() {
->>>>>>> 3a1f0936280e82e795ee1d200fb79090acd40ca8
             cy.log("The Element: " + element + " is Displyaed in the webpage.");
         }), function (err){
             cy.log("The Element: " + element + " is not Displayed in the webpage.");
@@ -68,13 +49,8 @@ class GenericHelpers  {
 
     }
 
-<<<<<<< HEAD
     elementIsNotDisplayed(element) {
         cy.get(locators.getLoctors(element)).should('not.be.visible').then(function() {
-=======
-    elementIsNotDisplayed(webElem) {
-        cy.get(locators[webElem]).should('not.be.visible').then(function() {
->>>>>>> 3a1f0936280e82e795ee1d200fb79090acd40ca8
             cy.log("The Element: " + element + " is not Displyaed in the webpage.");
         }), function (err){
             cy.log("The Element: " + element + " is Displayed in the webpage.");
@@ -97,13 +73,8 @@ class GenericHelpers  {
 
     }
    
-<<<<<<< HEAD
     elementIsNotEnabled(element) {
         cy.get(locators.getLoctors(element)).should("be.disabled").then(function() {
-=======
-    elementIsNotEnabled(webElem) {
-        cy.get(locators[webElem]).should("be.disabled").then(function() {
->>>>>>> 3a1f0936280e82e795ee1d200fb79090acd40ca8
             cy.log("The Element: " + element + " is Disabled in the webpage.");
         }), function (err){
             cy.log("The Element: " + element + " is not Displayed in the webpage.");

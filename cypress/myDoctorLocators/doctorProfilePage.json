@@ -1,0 +1,19 @@
+{
+   "Dashboard":"div .MuiList-root .MuiButtonBase-root .MuiTypography-root:First()",
+   "Doctor Profile":"div .MuiList-root .MuiButtonBase-root .MuiTypography-root:eq(1)",
+   "Submenu items":"div .MuiList-root .MuiButtonBase-root .MuiTypography-root",
+   "Personal Information page":"main",
+   "Qualification page":"main",
+   "Dashboard page":"main",
+   "Name":".MuiGrid-align-items-xs-center :first()",
+   "Consultaion Fee":".MuiGrid-align-items-xs-center .MuiFormControl-root :last()",
+   "Phone Number":".MuiPaper-root:last()",
+   "Gender":".MuiPaper-root:last()",
+   "Email":".MuiPaper-root:last()",
+   "Bio":".MuiPaper-root:last()",
+   "Experience page":"div .MuiTypography-root",
+   "Experience":"div .MuiList-root .MuiButtonBase-root .MuiTypography-root:eq(4)",
+   "Qualification":"div .MuiList-root .MuiButtonBase-root .MuiTypography-root:eq(1)",
+   "Experience item":".MuiList-root .MuiLink-root .MuiButtonBase-root .MuiListItemText-root .MuiTypography-root:contains('Experience')",
+   "Personal Information item":".MuiList-root .MuiLink-root .MuiButtonBase-root .MuiListItemText-root .MuiTypography-root:contains('Personal Information item')"
+}

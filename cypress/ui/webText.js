@@ -6,11 +6,12 @@ class WebText {
     getText(element) {
         try {
 
-            return  cy.get(locators.getLoctors(element)).invoke('text').then(function (text) {
+     return cy.get(locators.getLoctors(element)).invoke('text').then(function (text) {
 
-                return new Promise(function (resolve, reject) {
-                    cy.log("The text of element is captured which is: " + err);
-                    resolve(text);
+        return cy.get(locators.getLoctors(element)).invoke('text').then(function (text) {
+            cy.wrap(text).as('SpecialityCard');
+                    cy.log("The text of element is captured which is: " + text);
+                    
                 })
             })
         }
@@ -88,7 +89,7 @@ class WebText {
     verifyExactAttribute(element, attribute, value) {
         try {
 
-            if ( cy.get(locators.getLoctors(element)).invoke('attr', attribute).should('equal', value)) {
+            if ( element.invoke('attr', attribute).should('equal', value)) {
 
                 cy.log("The expected attribute: " + attribute + " value matches the actual " + value);
             }

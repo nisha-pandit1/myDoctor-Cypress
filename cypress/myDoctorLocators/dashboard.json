@@ -1,0 +1,10 @@
+{
+    "section": "main",
+    "First Speciality Card": "div.MuiPaper-outlined.MuiPaper-rounded:first()",
+    "Second Speciality Card": "div.MuiPaper-outlined.MuiPaper-rounded:eq(1)",
+    "Showing results for text": "main",
+    "view all specialities": "div a:contains('View all Specialities...')",
+    "First Doctor Card": "div .MuiCardContent-root:first()",
+    "doctor cards": "div .MuiCardContent-root",
+    "pagination page": "div .MuiPagination-ul .MuiButtonBase-root"
+}
