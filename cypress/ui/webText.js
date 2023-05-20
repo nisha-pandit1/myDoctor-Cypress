@@ -1,11 +1,17 @@
+import Loctors from "../myDoctorLocators/mergingLocators";
+const locators = new Loctors();
+
 class WebText {
    
     getText(element) {
         try {
-            return  cy.get(element).invoke('text').then(function (text) {
-                return new Promise(function (resolve, reject) {
-                    cy.log("The text of element is captured which is: " + err);
-                    resolve(text);
+
+     return cy.get(locators.getLoctors(element)).invoke('text').then(function (text) {
+
+        return cy.get(locators.getLoctors(element)).invoke('text').then(function (text) {
+            cy.wrap(text).as('SpecialityCard');
+                    cy.log("The text of element is captured which is: " + text);
+                    
                 })
             })
         }
@@ -14,8 +20,10 @@ class WebText {
         }
     }
 
+
     shouldHaveText(element, text) {
-        cy.get(element).should("have.text", text).then(function (text) {
+        cy.get(locators.getLoctors(element)).should("have.text", text).then(function (text) {
+
             cy.log("The element is have: " + text);
 
         }, function (err) {
@@ -23,8 +31,10 @@ class WebText {
         });
 
     }
+
     shouldHaveValue(element, value) {
-        cy.get(element).should('have.value', value).then(function (text) {
+        cy.get(locators.getLoctors(element)).should('have.value', value).then(function (text) {
+
             cy.log("The element have value: " + value);
 
         }, function (err) {
@@ -33,8 +43,10 @@ class WebText {
 
     }
 
+
     shouldContainText(element, text) {
-        cy.get(element).should("contain", text).then(
+        cy.get(locators.getLoctors(element)).should("contain", text).then(
+
           function (text) {
             cy.log("             The element contain: " + text);
           },
@@ -46,7 +58,9 @@ class WebText {
 
     verifyExactText(element, expectedtext) {
         try {
-            if ( cy.get(element).should('have.text', expectedtext)) {
+
+            if ( cy.get(locators.getLoctors(element)).should('have.text', expectedtext)) {
+
                 cy.log("The Expected Text matches the actual " + expectedtext);
             }
             else {
@@ -59,7 +73,8 @@ class WebText {
     }
 
     verifyPartialText(element, expectedtext) {
-        cy.get(element).should('contain', expectedtext).then(
+        cy.get(locators.getLoctors(element)).should('contain', expectedtext).then(
+
             function (text) {
                 cy.log("The Expected Text matches the actual " + expectedtext);
             },
@@ -73,7 +88,9 @@ class WebText {
 
     verifyExactAttribute(element, attribute, value) {
         try {
-            if ( cy.get(element).invoke('attr', attribute).should('equal', value)) {
+
+            if ( element.invoke('attr', attribute).should('equal', value)) {
+
                 cy.log("The expected attribute: " + attribute + " value matches the actual " + value);
             }
             else {
@@ -89,7 +106,9 @@ class WebText {
     verifyPartialAttribute(element, attribute, value) {
 
         try {
-            if ( cy.get(element).invoke('attr', attribute).should('contain', value)) {
+
+            if ( cy.get(locators.getLoctors(element)).invoke('attr', attribute).should('contain', value)) {
+
                 cy.log("The expected attribute: " + attribute + " value matches the actual " + value);
             }
             else {

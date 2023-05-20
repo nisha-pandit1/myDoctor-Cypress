@@ -1,0 +1,9 @@
+{
+    "search bar": ".MuiInputBase-input:last",
+    "search icon": ".MuiPaper-root .MuiButtonBase-root:first()",
+    "doctor carts": "div.MuiCardContent-root p",
+    "specialities field": ".MuiInputBase-input:first",
+    "no results message":"div p.MuiTypography-root",
+    "No options":".MuiAutocomplete-noOptions"
+    
+}

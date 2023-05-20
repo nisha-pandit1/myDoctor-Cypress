@@ -1,0 +1,8 @@
+{
+    "fullname": "input#full_name",
+    "Email": "input#email_address",
+    "mobilenumber": "input#mobile_number",
+    "Password": "input#password",
+    "confirm password": "input#confirm_password",
+    "register button": "form [type='submit']:last()"
+}

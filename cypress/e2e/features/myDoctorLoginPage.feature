@@ -1,8 +1,8 @@
 Feature: Login Section
 
-    # @Regression @Complete
+    # # @Regression @Complete
     Scenario Outline: Sucessfully Login with valid credential
-        Given user is on the homepage
+        Given user navigates to the "<Page Type>" page
         When user clicks on the "login button"
         And user enters the users "<email>" in the "email" input field
         And user enters the users "<password>" in the "Password" input field
@@ -10,5 +10,5 @@ Feature: Login Section
         Then user should navigate to the "homepage"
 
         Examples:
-            | email        | password        |
-            | DOCTOR_EMAIL | DOCTOR_PASSWORD |
+            | Page Type | email        | password        |
+            | homepage  | DOCTOR_EMAIL | DOCTOR_PASSWORD |

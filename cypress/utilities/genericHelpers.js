@@ -1,9 +1,11 @@
-class WebElement {
+import Loctors from "../myDoctorLocators/mergingLocators";
+const locators = new Loctors();
+class GenericHelpers  {
   
     elementCount(element) {
 
         try {
-            return cy.get(element).its('length').then(function (size) {
+            return cy.get(locators.getLoctors(element)).its('length').then(function (size) {
                 return new Promise(function (resolve, reject) {
                     resolve(size);
                 })
@@ -15,7 +17,7 @@ class WebElement {
     }
 
     elementIsPresent(element) {
-        cy.get(element).should('exist').then(function() {
+        cy.get(locators.getLoctors(element)).should('exist').then(function() {
             cy.log("The Element: " + element + " is Present in the webpage.");
         }), function (err){
             cy.log("The Element: " + element + " is not Present in the webpage.");
@@ -24,7 +26,7 @@ class WebElement {
     }
        
     
-    elementIsNotPresent(element) {
+    elementIsNotPresent(webElem) {
         try {
             if (element.should('not.exist')) {
                 cy.log("The Element: " + element + " is Not Present in the webpage.");
@@ -39,7 +41,7 @@ class WebElement {
     }
 
     elementIsDisplayed(element) {
-        cy.get(element).should('be.visible').then(function() {
+        cy.get(locators.getLoctors(element)).should('be.visible').then(function() {
             cy.log("The Element: " + element + " is Displyaed in the webpage.");
         }), function (err){
             cy.log("The Element: " + element + " is not Displayed in the webpage.");
@@ -48,14 +50,14 @@ class WebElement {
     }
 
     elementIsNotDisplayed(element) {
-        cy.get(element).should('not.be.visible').then(function() {
+        cy.get(locators.getLoctors(element)).should('not.be.visible').then(function() {
             cy.log("The Element: " + element + " is not Displyaed in the webpage.");
         }), function (err){
             cy.log("The Element: " + element + " is Displayed in the webpage.");
          }
     }
 
-    elementIsEnabled(element) {
+    elementIsEnabled(webElem) {
 
         try {
             if (element.should("not.be.disabled")) {
@@ -72,7 +74,7 @@ class WebElement {
     }
    
     elementIsNotEnabled(element) {
-        cy.get(element).should("be.disabled").then(function() {
+        cy.get(locators.getLoctors(element)).should("be.disabled").then(function() {
             cy.log("The Element: " + element + " is Disabled in the webpage.");
         }), function (err){
             cy.log("The Element: " + element + " is not Displayed in the webpage.");
@@ -81,7 +83,7 @@ class WebElement {
     
 
     
-    shouldHaveCSS(element, cssname, value) {
+    shouldHaveCSS(webElem, cssname, value) {
         element.should('have.css', cssname, value).then(function (text) {
             cy.log("The element have css value: " + value);
 
@@ -90,7 +92,7 @@ class WebElement {
         });
     }
 
-    getAttribute(element, attribute) {
+    getAttribute(webElem, attribute) {
         element.invoke('attr', attribute).then(function (text) {
             cy.log("The attribute of element is captured which is: " + text);
             return text;
@@ -112,4 +114,4 @@ class WebElement {
 
 }
 
-export default WebElement
+export default GenericHelpers;

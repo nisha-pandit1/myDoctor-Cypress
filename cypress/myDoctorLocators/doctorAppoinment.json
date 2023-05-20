@@ -1,0 +1,16 @@
+{
+    "Appointments page": "div .MuiListItemText-root .MuiTypography-root:contains('Appointments')",
+    "cancel button": ".right .MuiButtonBase-root .MuiButton-label:first()",
+    "section": "main",
+    "Confirm button": "",
+    "appointment filter field": "#per-page-options",
+    "all appointments": ".MuiAvatar-root",
+    "Previous Button": "[aria-label='Go to previous page']",
+    "Next Button": "[aria-label='Go to next page']",
+    "appointmentDropdown": "[data-value='5']",
+    "My Appointments": ".MuiAvatar-root",
+    "Slot Time": "div .data:eq(2)",
+    "Slot Time-1": "div .data:eq(2)",
+    "Enabled Status": "div .middle .details .status",
+    "Disabled Status": "div .middle .details .status"
+}

@@ -23,6 +23,12 @@
   "dependencies": {
     "base-64": "^1.0.0",
     "cypress-xpath": "^2.0.1",
+    "fs": "^0.0.1-security",
     "winston": "^3.8.2"
+  },
+  "browser": {
+    "fs": false,
+    "os": false,
+    "path": false
   }
 }

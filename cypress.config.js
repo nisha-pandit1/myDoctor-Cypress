@@ -1,5 +1,6 @@
 const { defineConfig } = require("cypress");
 const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
+const cypress = require("cypress");
 const addCucumberPreprocessorPlugin =
   require("@badeball/cypress-cucumber-preprocessor").addCucumberPreprocessorPlugin;
 const createEsbuildPlugin =
@@ -20,7 +21,7 @@ module.exports = defineConfig({
       return config;
     },
     specPattern: "cypress/e2e/features/*.feature",
-    baseUrl: "http://192.168.29.2:3002/",
+    baseUrl: "http://my-doctors.net/",
     chromeWebSecurity: false,
     chromeWebSecurity: false,
     viewportHeight: 900,

@@ -1,6 +1,15 @@
+import Loctors from "../myDoctorLocators/mergingLocators";
+const locators = new Loctors();
 class WebButton {
   
     click(element) {
+        cy.get(locators.getLoctors(element)).click().then(function () {
+            cy.log("The element got clicked.");
+        }, function (err) {
+            cy.log("--->Error: The element couldn't get clicked due to: " + err);
+        });
+    }
+    clicks(element) {
         cy.get(element).click().then(function () {
             cy.log("The element got clicked.");
         }, function (err) {
@@ -9,7 +18,7 @@ class WebButton {
     }
 
     multipleClick(element) {
-        cy.get(element).click({ multiple: true }).then(function () {
+        cy.get(locators.getLoctors(element)).click({ multiple: true }).then(function () {
             cy.log("The element got clicked.");
         }, function (err) {
             cy.log("--->Error: The element couldn't get clicked due to: " + err);
@@ -17,7 +26,7 @@ class WebButton {
     }
 
     focusClick(element) {
-        cy.get(element).click({ force: true }).then(function () {
+        cy.get(locators.getLoctors(element)).click({ force: true }).then(function () {
             cy.log("The element got clicked.");
         }, function (err) {
             cy.log("--->Error: The element couldn't get clicked due to: " + err);
@@ -25,7 +34,7 @@ class WebButton {
     }
 
     realclick(element) {
-        cy.get(element).realClick().then(function () {
+        cy.get(locators.getLoctors(element)).realClick().then(function () {
             cy.log("The element got clicked.");
         }, function (err) {
             cy.log("--->Error: The element couldn't get clicked due to: " + err);
@@ -33,7 +42,7 @@ class WebButton {
     }
 
     check(element){
-        cy.get(element).check().then(function() {
+        cy.get(locators.getLoctors(element)).check().then(function() {
             cy.log("The element got checked");
         }), function (err){
             cy.log("-->Error: The element couldn't get checked due to:"+ err);
